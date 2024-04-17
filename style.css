@@ -1,0 +1,236 @@
+/*------------------------------------*\
+  #GLOBAL-VARIABLES
+\*------------------------------------*/
+
+:root {
+  --color-primary: hsl(179, 62%, 43%);
+  --color-secondary: hsl(179, 48%, 52%);
+  --color-accent: hsl(71, 73%, 54%);
+
+  --color-bg-main: hsl(205, 44%, 93%);
+
+  --color-gray: hsl(218, 22%, 67%);
+  --color-white: hsl(0, 0%, 100%);
+  --font-family: "Karla", sans-serif;
+
+  --box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.334);
+}
+
+/*------------------------------------*\
+  #FONT-IMPORTS
+\*------------------------------------*/
+
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/karla-v31-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/karla-v31-latin-700.woff2") format("woff2");
+}
+
+html {
+  box-sizing: border-box;
+  /* set base for rem to 10 */
+  font-size: 62.5%;
+  font-family: var(--font-family);
+}
+
+*,
+*::before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.4rem;
+  letter-spacing: -0.017px;
+  background-color: var(--color-bg-main);
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: -0.025rem;
+  color: var(--color-primary);
+  margin-bottom: 22px;
+  margin-top: -2px;
+}
+
+h2 {
+  color: var(--color-white);
+  font-size: 1.8rem;
+  letter-spacing: -0.022rem;
+  margin-bottom: 16px;
+}
+
+p > strong {
+  display: block;
+  font-size: 1.5rem;
+  letter-spacing: -0.019rem;
+  line-height: 2rem;
+  color: var(--color-accent);
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+p {
+  line-height: 2.6rem;
+  letter-spacing: -0.017rem;
+  color: var(--color-gray);
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  width: 100dvw;
+  display: grid;
+  place-content: center;
+}
+
+.product {
+  width: 311px;
+  border-radius: 6px;
+  margin: 72px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  background-color: var(--color-white);
+}
+
+.product__description {
+  padding: 32px 24px;
+}
+
+.product__price {
+  padding: 24px;
+  background-color: var(--color-primary);
+
+  p {
+    color: var(--color-white);
+    line-height: 3.6rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.017rem;
+    margin-bottom: 20px;
+  }
+}
+
+.product__benefits {
+  padding: 24px;
+  background-color: var(--color-secondary);
+}
+
+.price-tag {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.price {
+  color: var(--color-white);
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.tag {
+  line-height: 2.6rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.017rem;
+  color: var(--color-white);
+  margin-left: 12px;
+  opacity: 0.7;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  color: var(--color-white);
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: -0.02rem;
+  font-size: 1.6rem;
+  padding: 16px 0;
+  border-radius: 8px;
+  border: transparent;
+  background-color: var(--color-accent);
+  box-shadow: var(--box-shadow);
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.6;
+}
+
+.product__benefits > ul > li {
+  font-size: 1.4rem;
+  letter-spacing: -0.017rem;
+  line-height: 2rem;
+  color: var(--color-white);
+}
+
+@media (min-width: 700px) {
+  main {
+    height: 100vh;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    letter-spacing: -0.03rem;
+    margin-top: 0;
+    margin-bottom: 26px;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    letter-spacing: -0.02rem;
+  }
+
+  p > strong {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .product {
+    width: 635px;
+    border-radius: 8px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 218px 260px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+
+  .product__description {
+    grid-row: 1;
+    grid-column: 1 / 3;
+    padding: 40px;
+    padding-right: 80px;
+  }
+
+  .product__price {
+    grid-row: 2;
+    grid-column: 1;
+    padding: 40px;
+  }
+
+  .product__benefits {
+    grid-row: 2;
+    grid-column: 2;
+    padding: 40px;
+  }
+}
